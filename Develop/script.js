@@ -8,10 +8,15 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-
-
-
-
+  var scheduleItems = [];
+  
+  $('.saveBtn').on('click', function() {
+    scheduleItems.push({
+      name: 'Item',
+      description: $(this).prev().val()
+    })
+    localStorage.setItem("scheduleItem", JSON.stringify(scheduleItems));
+  })
 
 
 
@@ -21,7 +26,6 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  
 
 
 
@@ -31,9 +35,9 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  var test = $("#hour-10").children("textarea").text();
   
-  console.log(test);
+
+  
 
 
 
