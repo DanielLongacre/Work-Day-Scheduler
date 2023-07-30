@@ -34,8 +34,10 @@ $(function () {
     $('.time-block').each(function() {
       var hour = parseInt(this.id);
 
-
-    })
+      $(this).toggleClass('past', hour < currentHour);
+      $(this).toggleClass('present', hour === currentHour);
+      $(this).toggleClass('future', hour > currentHour);
+    });
   }
 
 
@@ -58,4 +60,10 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
   var dayStamp = moment().format('dddd' + ', ' + 'MMMM Do');
   $('#currentDay').text(dayStamp);
+
+
+
+  //Calling functions
+  hourColor();
+
 });
