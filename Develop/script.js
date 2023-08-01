@@ -12,7 +12,7 @@ $(function () {
   
   $('.saveBtn').on('click', function() {
     scheduleItems.push({
-      name: 'Item',
+      hour: $(this).parent().attr('id'),
       description: $(this).prev().val()
     })
     localStorage.setItem("scheduleItem", JSON.stringify(scheduleItems));
@@ -26,7 +26,7 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  var militaryHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+  
   var currentHour = moment().format('H');
   console.log(currentHour);
 
