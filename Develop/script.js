@@ -62,5 +62,5 @@ $(function () {
 
   //Calling function
   hourColor();
-
+  // setInterval(hourColor(), 60000);
 });
